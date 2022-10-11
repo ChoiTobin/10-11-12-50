@@ -1,6 +1,7 @@
 // Action value
 const ADD_TODO = "ADD_TODO";
 const DELETE = "DELETE";
+const UPDATE ="UPDATE"
 
 // Action Creator
 export const addTodo = (payload) => {  
@@ -13,6 +14,16 @@ export const deleteToDo=(id)=>{
       id:id
   };
 };
+export const updateTodo=(id)=>{
+  // console.log('ID잘들어왓나?',id)
+  return{
+    type:UPDATE,
+    id:id.id,
+    isdone:id.isdone
+    ,
+  }
+  
+}
 
 
 // 1. useSelector로 받아오는 todos 콘솔찍어서 create할때 id값 증가하는지 확인.
@@ -64,11 +75,23 @@ const todos = (state = initialState, action) => {
         //action.payload 변형을 주어서 넣기   
       };
       case DELETE:
-        console.log('구분',action)
         return {
           ...state,
-          todos: [ ...state.todos.filter(todo => todo.id !== state.id)]  
+          // todos: [ ...state.todos.filter(todo => todo.id !== state.id)] 
+          todos: [ ...state.todos.filter(todo => todo.id !== action.id)] 
+          
         };
+      case UPDATE:
+        console.log('UPDATE구분 isdone값',action)
+        return{
+          ...state,
+          todos:[...state.todos.filter(todo => todo.isdone !==action.isdone)]
+          //현재 todos를 만들어줘서 todos의 id값을 뽑아내서 비교하려고 함.
+          //todo.isdone은 현재 기본값 false인데 클릭하면 true로 바뀌어있다.
+          //이상태에서 filter가 맞는지보기.   => 이렇게 해서 useselector를 통해서
+          //값을 주면되나? isdone이 false이면 뭐 true이면 뭐.
+          
+        }
       
     default: 
       return state

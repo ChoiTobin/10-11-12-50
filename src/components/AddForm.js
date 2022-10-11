@@ -10,7 +10,7 @@ const AddForm = () => {
   const todos = useSelector((state) => state.todos.todos);
   const dispatch = useDispatch();
 
-console.log('여기',todos)
+// console.log('여기',todos)
 
   const onSubmitHandler = (e) => {
     
