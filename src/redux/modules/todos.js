@@ -27,11 +27,8 @@ export const updateTodo=(id)=>{
 
 
 // 1. useSelector로 받아오는 todos 콘솔찍어서 create할때 id값 증가하는지 확인.
-
 // 2. id값이 증가한다면 삭제하기 버튼에서 onClick={() => console.log(todo.id)} 이런식으로 콘솔찍어서 내가 선택한 카드의 id값이 맞는지 확인
-
 // 3. dispatch로 id값 실어 보내기
-
 // 4. reducer에서 action, state 값 콘솔찍어서 확인! => 이때 콘솔은 return위에서 찍으면 됩니다 ex) case DELETE_TODO:
 // console.log(action, state);
 // return {....~ };
@@ -82,10 +79,19 @@ const todos = (state = initialState, action) => {
           
         };
       case UPDATE:
-        console.log('UPDATE구분 isdone값',action)
+        // console.log('UPDATE구분 isdone값',action.isdone,state.todos[0].isdone)
+        
         return{
           ...state,
-          todos:[...state.todos.filter(todo => todo.isdone !==action.isdone)]
+          todos:[...state.todos]
+          
+          
+          //true인 값을 반환 false인 값을 반환.
+          // todos:[...state.todos.filter(todo => todo.isdone !==action.isdone)]
+          //여기를 버튼을 눌렀을때 같지않으면 새로운 배열로 생겨두는게 아닌 이건 삭제 방법이고
+          //여기를 버튼을 눌렸을때 수정하려면? map을 써서 누르지 않은 부분을 
+
+
           //현재 todos를 만들어줘서 todos의 id값을 뽑아내서 비교하려고 함.
           //todo.isdone은 현재 기본값 false인데 클릭하면 true로 바뀌어있다.
           //이상태에서 filter가 맞는지보기.   => 이렇게 해서 useselector를 통해서
