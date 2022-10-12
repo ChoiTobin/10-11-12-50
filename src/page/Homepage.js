@@ -19,7 +19,7 @@ const HomePage = () =>{
     const {id} = useParams();
     
     const { todos } = useSelector((state) => state.todos);
-    // console.log(todos)
+    console.log('구분',todos)
     return ( 
         <div>
             {/* {id} */}

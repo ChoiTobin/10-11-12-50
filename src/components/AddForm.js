@@ -28,11 +28,8 @@ const AddForm = () => {
         isdone:false
       })
     );
-    
-
-
-
-
+      setText('')
+      setTitle('')
     
   };
 
@@ -42,7 +39,6 @@ const AddForm = () => {
       <form onSubmit={onSubmitHandler}>
         <label>제목</label>
         <StInput
-
           type="text"
           value={title}
           isdone={false}

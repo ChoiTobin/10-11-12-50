@@ -91,7 +91,7 @@ const todos = (state = initialState, action) => {
 
         
       case LASTTOBIN:
-        // console.log('이게 나와야되~~',action)
+        console.log('이게 나와야되~~',action)
       return{
         ...state,
           todos:[...state.todos,action]
