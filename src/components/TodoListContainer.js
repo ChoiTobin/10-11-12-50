@@ -6,35 +6,30 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 
-
-
 const TodoListContainer = () => {
   const { todos } = useSelector((state) => state.todos);
+
   const dispatch = useDispatch();
+
 
   
 
 const working_list = todos.filter((todo) => todo.isdone == false).map((todo,id) =>
 <StTodo key={todo.id}>
-    <Link to='/Homepage' onClick={()=>{
-      // console.log(todo.id,todo.title,todo.text)
+    <Link to= {`/Homepage/${todo.id}`} onClick={()=>{
+      //jsx에서 템플릿 리터럴 쓰는법 중괄호안 +템플릿 리터럴 
       dispatch(
         tobinTodo({
           id:todo.id,
           title:todo.title,
           text:todo.text
-
         })
-      )
-
-
-      
-      }}>상세보기</Link>
+      )}}>상세보기
+      </Link>
       <h1>{todo.title}</h1>
       {/* router연습 */}
       <div>{todo.text}</div>
       <button  onClick={()=>{
-      // console.log('***',todo.id)
       dispatch(
         deleteToDo(
           todo.id
@@ -59,7 +54,7 @@ const working_list = todos.filter((todo) => todo.isdone == false).map((todo,id) 
 
 const working_list2 = todos.filter((todo) => todo.isdone == true).map((todo,id) =>
   <StTodo key={todo.id}>
-    <Link to='/Homepage'  onClick={()=>{}}>상세보기</Link>
+    <Link to= {`/Homepage/${todo.id}`}  onClick={()=>{}}>상세보기</Link>
         <h1>{todo.title}</h1>
         <div>{todo.text}</div>
         <button  onClick={()=>{

@@ -3,10 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { addTodo } from "../redux/modules/todos";
 import styled from "styled-components";
 
-
+// let count =0;
 const AddForm = () => {
   const [title, setTitle] = useState("");
   const [text,setText] = useState('');
+
+
+
   const todos = useSelector((state) => state.todos.todos);
   const dispatch = useDispatch();
 
@@ -15,6 +18,7 @@ const AddForm = () => {
   const onSubmitHandler = (e) => {
     
     e.preventDefault();
+ 
     if(title === "" || text ==='') return; // 아무것도 입력하지 않았을 때 dispatch 하지 않음
     dispatch(
       addTodo({
@@ -24,6 +28,12 @@ const AddForm = () => {
         isdone:false
       })
     );
+    
+
+
+
+
+    
   };
 
   return (
@@ -32,6 +42,7 @@ const AddForm = () => {
       <form onSubmit={onSubmitHandler}>
         <label>제목</label>
         <StInput
+
           type="text"
           value={title}
           isdone={false}
@@ -48,7 +59,8 @@ const AddForm = () => {
             setText(e.target.value);
           }}
         />
-        <StButton>추가하기</StButton>
+        <StButton onClick={()=>{
+          }}>추가하기</StButton>
       </form>
     </StFormContainer>
   );

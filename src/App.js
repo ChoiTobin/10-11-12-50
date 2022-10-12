@@ -18,7 +18,7 @@ const App = () => {
 
     <StContainer>
       <Routes>
-        <Route path="/homepage" element={<HomePage/>}></Route>
+        <Route path="/homepage/:id" element={<HomePage/>}></Route>
         <Route path="/todo" element={<Todolist/>}></Route>
       </Routes>
     </StContainer>
@@ -29,6 +29,9 @@ const App = () => {
 export default App;
 
 const StContainer = styled.section`
-  max-width: 1440px;
+  max-width: 1200px;
+  min-width:800px
   margin: 0 auto;
+  margin:auto
+
 `;
