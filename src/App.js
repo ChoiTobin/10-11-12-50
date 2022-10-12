@@ -19,7 +19,7 @@ const App = () => {
     <StContainer>
       <Routes>
         <Route path="/homepage/:id" element={<HomePage/>}></Route>
-        <Route path="/todo" element={<Todolist/>}></Route>
+        <Route path="/" element={<Todolist/>}></Route>
       </Routes>
     </StContainer>
 

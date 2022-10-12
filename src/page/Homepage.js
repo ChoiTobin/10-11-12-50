@@ -27,7 +27,7 @@ const HomePage = () =>{
             {/* <div>ID:{todos[todos.length-1].id}</div> */}
             <h1>{todos[todos.length-1].title}</h1>
             <div>{todos[todos.length-1].text}</div>
-            <button><Link to='/todo'>이전으로</Link></button>
+            <button><Link to='/'>이전으로</Link></button>
         </div>
 
     )
