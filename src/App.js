@@ -3,14 +3,26 @@ import TodoListContainer from "./components/TodoListContainer";
 import styled from "styled-components";
 import AddForm from "./components/AddForm";
 import Header from "./components/Header";
+import HomePage from "./page/Homepage";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+// import HomePage from "./page/Homepage";
+import { Link } from "react-router-dom";
+import Todolist from "./page/Todolist";
+
+
+
 
 const App = () => {
   return (
+    
+
     <StContainer>
-      <Header></Header>
-      <AddForm />
-      <TodoListContainer />
+      <Routes>
+        <Route path="/homepage" element={<HomePage/>}></Route>
+        <Route path="/todo" element={<Todolist/>}></Route>
+      </Routes>
     </StContainer>
+
   );
 };
 

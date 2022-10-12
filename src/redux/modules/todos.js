@@ -2,6 +2,7 @@
 const ADD_TODO = "ADD_TODO";
 const DELETE = "DELETE";
 const UPDATE ="UPDATE"
+const LASTTOBIN ="LASTTOBIN"
 
 // Action Creator
 export const addTodo = (payload) => {  
@@ -21,6 +22,16 @@ export const updateTodo=(id)=>{
     id:id.id,
     isdone:id.isdone
     ,
+  }
+  
+}
+export const tobinTodo=(id)=>{
+  // console.log('ID잘들어왓나?',id)
+  return{
+    type:LASTTOBIN,
+    id:id.id,
+    title:id.title,
+    text:id.text,
   }
   
 }
@@ -86,7 +97,31 @@ const todos = (state = initialState, action) => {
           todos:[...state.todos]
           
           
-          //true인 값을 반환 false인 값을 반환.
+         
+          
+        }
+
+
+
+
+
+
+        
+      case LASTTOBIN:
+  
+      return{
+        ...state,
+          todos:[...state.todos,action]
+      }
+      
+    default: 
+      return state
+  }
+  };
+
+
+export default todos;
+ //true인 값을 반환 false인 값을 반환.
           // todos:[...state.todos.filter(todo => todo.isdone !==action.isdone)]
           //여기를 버튼을 눌렀을때 같지않으면 새로운 배열로 생겨두는게 아닌 이건 삭제 방법이고
           //여기를 버튼을 눌렸을때 수정하려면? map을 써서 누르지 않은 부분을 
@@ -96,13 +131,3 @@ const todos = (state = initialState, action) => {
           //todo.isdone은 현재 기본값 false인데 클릭하면 true로 바뀌어있다.
           //이상태에서 filter가 맞는지보기.   => 이렇게 해서 useselector를 통해서
           //값을 주면되나? isdone이 false이면 뭐 true이면 뭐.
-          
-        }
-      
-    default: 
-      return state
-  }
-  };
-
-
-export default todos;

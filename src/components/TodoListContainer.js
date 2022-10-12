@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import { useSelector,useDispatch } from "react-redux";
-import { deleteToDo } from "../redux/modules/todos";
+import { deleteToDo, tobinTodo } from "../redux/modules/todos";
 import { updateTodo } from "../redux/modules/todos";
-
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 
 
 
@@ -15,7 +16,22 @@ const TodoListContainer = () => {
 
 const working_list = todos.filter((todo) => todo.isdone == false).map((todo,id) =>
 <StTodo key={todo.id}>
+    <Link to='/Homepage' onClick={()=>{
+      // console.log(todo.id,todo.title,todo.text)
+      dispatch(
+        tobinTodo({
+          id:todo.id,
+          title:todo.title,
+          text:todo.text
+
+        })
+      )
+
+
+      
+      }}>상세보기</Link>
       <h1>{todo.title}</h1>
+      {/* router연습 */}
       <div>{todo.text}</div>
       <button  onClick={()=>{
       // console.log('***',todo.id)
@@ -39,12 +55,11 @@ const working_list = todos.filter((todo) => todo.isdone == false).map((todo,id) 
         }}>{todo.isdone ? '취소':'완료'}
       </button>
   </StTodo> 
-
-
 )
 
 const working_list2 = todos.filter((todo) => todo.isdone == true).map((todo,id) =>
   <StTodo key={todo.id}>
+    <Link to='/Homepage'  onClick={()=>{}}>상세보기</Link>
         <h1>{todo.title}</h1>
         <div>{todo.text}</div>
         <button  onClick={()=>{
@@ -72,11 +87,12 @@ const working_list2 = todos.filter((todo) => todo.isdone == true).map((todo,id) 
 )
   
 
-
-
   return (
     <div>
         <div>working</div>
+      
+
+
         <StTodos>
           {working_list}
         </StTodos>
