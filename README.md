@@ -6,9 +6,6 @@
 - Delete Todo
 
 
-
-
-
 <h3>-배포 도메인<h3/>
 react-redux-todolist-ashy.vercel.app
 
@@ -32,10 +29,6 @@ react-redux-todolist-ashy.vercel.app
     -도메인 끝 부분이 어떠한값으로 바뀌어도 상세 페이지를 보여줍니다.
    
     
-    3.app.js에 Routes,Route를 사용하여
-    
-    page폴더에 있던 Homepage.js와 Todolist.js를 app.js 안에서 Routes 설정 하였습니다.
-
-    4.redux폴더에 store를 둠
-
-    5.modules폴더에 Action , Action Creator, Reducer를 두었습니다.
+3.app.js에 Routes,Route를 사용하여 page폴더에 있던 Homepage.js와 Todolist.js를 app.js 안에서 Routes 설정 하였습니다.
+4.redux폴더에 store를 둠
+5.modules폴더에 Action , Action Creator, Reducer를 두었습니다.
