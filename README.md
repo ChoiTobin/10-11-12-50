@@ -1,17 +1,1 @@
--src폴더  
-  -components폴더
-      -Header.js
-      -AddForm.js
-      -TodoListContainer.js
-  -page폴더
-      -Homepage.js 
-      -Todolist.js
-  -redux폴더
-      -config폴더
-        -configStore.js
-  -modules폴더
-       -todos.js
-       
- -app.js
- -index.js
- 
+![20221013_153844](https://user-images.githubusercontent.com/87680494/195521093-3aec9e93-4575-4741-9213-c22bea0eb2cc.png)
