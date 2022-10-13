@@ -17,4 +17,4 @@
 
 
 
-React App (react-redux-todolist-ashy.vercel.app)
+react-redux-todolist-ashy.vercel.app
