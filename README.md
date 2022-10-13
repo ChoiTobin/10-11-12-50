@@ -32,7 +32,7 @@ react-redux-todolist-ashy.vercel.app
 3.app.js에 Routes,Route를 사용하여 page폴더에 있던 Homepage.js와 Todolist.js를 app.js 안에서 Routes 설정 하였습니다.
 
     
-4.redux폴더에 store를 둠
+4.redux폴더에 store를 두었습니다.
 
     
 5.modules폴더에 Action , Action Creator, Reducer를 두었습니다.
