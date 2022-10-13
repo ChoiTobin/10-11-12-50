@@ -27,8 +27,11 @@ react-redux-todolist-ashy.vercel.app
     -list는 input의 data값을 각각의 box요소에 담아서 보여주는역할을 하며 bottom section을 차지합니다.  
     
 
-2.page폴더를 통해서 상세페이지와 기본페이지를 나눔
-
+2.page폴더를 통해서 각각의 페이지를 쉽게 볼 수 있게 상세페이지와 기본페이지를 나누었고 useParams를 활용하여 
+    
+    -도메인 끝 부분이 어떠한값으로 바뀌어도 상세 페이지를 보여줍니다.
+   
+    
 app.js에 Routes,Route를 사용하여 
 page폴더에 있는 기본페이지와 상세페이지를 두었습니다. 
 
